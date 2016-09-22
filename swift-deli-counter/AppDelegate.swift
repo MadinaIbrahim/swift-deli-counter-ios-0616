@@ -9,12 +9,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
         
-        // let iosAncestors = ["Al", "Chris", "Zach"]
+         let deliCounter = DeliCounter()
         
-        // Do not alter
-        return true  //
-    }   //////////////
-}       /////////////
+        let stringForDeliLine = deliCounter.stringForDeliLine(["Al", "Chris", "Zach"])
+        print(stringForDeliLine)
+        
+        let addName = deliCounter.addName("Madina", toDeliLine: ["Al", "Chris", "Zach"])
+        print(addName)
+        
+        let serveNextCustomerInDeliLine = deliCounter.serveNextCustomerInDeliLine(["Al", "Chris", "Zach", "Madina"])
+        print(serveNextCustomerInDeliLine)
+        return true
+    }
+}
 
